@@ -1,0 +1,13 @@
+:root {
+  --color-primary: #2563eb;
+  --color-secondary: #64748b;
+  --color-danger: #dc2626;
+  --color-bg: #ffffff;
+  --color-text: #0f172a;
+
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+
+  --font-family: Inter, system-ui, sans-serif;
+}
