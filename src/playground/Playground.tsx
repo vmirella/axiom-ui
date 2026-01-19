@@ -1,18 +1,24 @@
-import { Button } from '@components'
+import { useState } from 'react'
+import { Button } from '@components/button/Button'
 
 export function Playground() {
+  const [theme, setTheme] = useState<'light' | 'dark'>('light')
+
+  const toggleTheme = () => {
+    const next = theme === 'light' ? 'dark' : 'light'
+    setTheme(next)
+    document.documentElement.setAttribute('data-theme', next)
+  }
+
   return (
-    <div style={{ padding: '24px' }}>
-      <h2>Axiom UI Playground</h2>
+    <div style={{ padding: 24 }}>
+      <Button onClick={toggleTheme}>Toggle {theme === 'light' ? 'Dark' : 'Light'}</Button>
 
-      <Button>Primary Button</Button>
+      <br />
+      <br />
 
-      <Button variant="secondary" size="lg">
-        Secondary Button
-      </Button>
-
-      <Button variant="ghost" size="sm">
-        Ghost Button
+      <Button variant="primary" size="md">
+        Primary Button
       </Button>
     </div>
   )
