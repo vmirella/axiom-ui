@@ -1,12 +1,47 @@
-.button {
+.axiom-button {
+  padding: var(--button-padding);
   font-family: var(--font-family);
   border: none;
   cursor: pointer;
+
+  border-radius: 6px;
+  font-weight: 500;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+
+  background-color: var(--color-primary);
+  color: var(--color-text);
+}
+
+/* DISABLED */
+
+.axiom-button:disabled {
+  background-color: var(--color-disabled-bg);
+  color: var(--color-disabled-text);
+  cursor: not-allowed;
+}
+
+/* ACCESSIBILITY */
+
+.axiom-button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+.button {
 }
 
 .primary {
   background-color: var(--color-primary);
   color: white;
+}
+
+.primary:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+}
+
+.primary:active:not(:disabled) {
+  background-color: var(--color-primary-active);
 }
 
 .secondary {

@@ -1,5 +1,7 @@
 import styles from './Button.module.css'
 import type { ButtonProps } from './Button.types'
+import { buttonPadding } from './button.tokens'
+import { buttonVariantClass } from './button.classes'
 import clsx from 'clsx'
 
 export function Button({
@@ -7,16 +9,13 @@ export function Button({
   size = 'md',
   disabled = false,
   children,
-  onClick
+  onClick,
 }: ButtonProps) {
   return (
     <button
-      className={clsx(
-        styles.button,
-        styles[variant],
-        styles[size]
-      )}
       disabled={disabled}
+      style={{ padding: buttonPadding[size] }}
+      className={clsx(styles['axiom-button'], buttonVariantClass[variant])}
       onClick={onClick}
     >
       {children}

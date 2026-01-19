@@ -1,0 +1,33 @@
+/* 🌞 LIGHT THEME (default) */
+:root {
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-primary-active: #1e40af;
+
+  --color-bg: #ffffff;
+  --color-text: #111827;
+
+  --color-disabled-bg: #e5e7eb;
+  --color-disabled-text: #9ca3af;
+}
+
+/* 🌙 DARK THEME */
+[data-theme='dark'] {
+  --color-primary: #60a5fa;
+  --color-primary-hover: #3b82f6;
+  --color-primary-active: #2563eb;
+
+  --color-bg: #0f172a;
+  --color-text: #e5e7eb;
+
+  --color-disabled-bg: #1f2937;
+  --color-disabled-text: #6b7280;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --color-primary: #60a5fa;
+    --color-bg: #0f172a;
+    --color-text: #e5e7eb;
+  }
+}
